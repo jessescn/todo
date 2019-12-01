@@ -1,0 +1,7 @@
+<div ng-controller="menuCtrl">
+    <p>Tasks</p>
+    <a href="{{option.reference}}" ng-class="{'selected-button': option.selected}" ng-repeat="option in options">
+        <img src="{{ option.icon }}">
+        <h3>{{option.label}}</h3>
+    </a>
+</div>

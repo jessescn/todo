@@ -1,0 +1,47 @@
+<div class="modalContent taskTable">
+    <h1>Editar Task</h1>
+    <form name="taskForm" class="taskForm">
+        <div>
+            <label>Título</label>
+            <input ng-value="currentTask.title" ng-model="task.title" type="text" name="title" ng-required="true" ng-maxlength="15">
+        </div>
+        <div>
+            <label>Descrição</label>
+            <input ng-value="currentTask.description" ng-model="task.description" type="text" name="description" ng-required="true">
+        </div>
+        <div class="input-date">
+                <div>
+                    <label>Data de Início</label>
+                    <input type="date"ng-model="task.startDate">
+                </div>
+                <div>
+                    <label>Data Final</label>
+                    <input type="date" value="currentTask.endDate" ng-model="task.endDate">
+                </div>
+            </div>
+        <div>
+            <label>Prioridade</label>
+            <select  ng-model="task.priority" ng-options="priority for priority in priorities">
+                <option value="" disabled>Selecione uma prioridade</option>
+            </select>
+        </div>
+        <div>
+            <label>Status</label>
+            <select ng-model="task.status" ng-options="taskStatus for taskStatus in status">
+                <option value="" disabled>Selecione o status da Task</option>
+            </select>
+        </div>
+    </form>
+    <div class="alert-messages">
+        <div ng-if="taskForm.title.$error.required && taskForm.title.$dirty">
+            Título Obrigatório!
+        </div>
+        <div ng-if="taskForm.description.$error.required && taskForm.description.$dirty">
+                Descrição Obrigatória!
+        </div>
+    </div>
+    <div class="form-btn">
+        <button ng-click="closeModal()">Cancelar</a>
+        <button ng-click="editTask(task, currentTask.id)">Adicionar Task</button>
+    </div>
+</div>

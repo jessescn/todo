@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html ng-app="todoLista">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Todo</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="libs/angular.js"></script>
+    <script src="libs/angular-route.js"></script>
+    <script src="js/app.js"></script>
+    <script src="configs/api.config.js"></script>
+    <script src="js/controllers/menuCtrl.js"></script>
+    <script src="js/controllers/taskCtrl.js"></script>
+    <script src="js/config/router-config.js"></script>
+    <script src="js/services/taskApiService.js"></script>
+</head>
+<body>
+    <div class="menu" ng-include="'view/menu.html'"></div>
+    <div class="content" ng-view></div>
+</body>
+</html>
