@@ -82,6 +82,7 @@ angular.module('todoLista').controller('taskCtrl',  function($scope, $location, 
         addTask(task)
         $scope.taskForm.$setPristine()
         $location.path('/tasks', false)
+        loadTasks()
     }
 
     $scope.updateTask = (taskId) => {
@@ -90,7 +91,9 @@ angular.module('todoLista').controller('taskCtrl',  function($scope, $location, 
             return elem.id == taskId
         })[0]
 
-        task.status = task.status != "Done" ? task.status = "Done" : "TODO"
+        console.log(task.status);
+        
+        task.status = task.status != "Done" ?  "Done" : "TODO"
 
         update(task)
     }

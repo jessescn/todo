@@ -8,7 +8,7 @@
     </div>
     <table ng-repeat="task in displayedTasks">
         <tr class="taskCard">
-            <td><input type="checkbox"ng-click="updateTask(task.id)">{{ task.title }}</td>
+            <td><input type="checkbox"ng-checked="task.status == 'Done'" ng-click="updateTask(task.id)">{{ task.title }}</td>
             <td class="priority"><div class="priorityColor" ng-style="{'background-color': prioritiesColors[task.priority]}" ></div> {{ task.priority + ' Priority' }}</td>
             <td>{{ task.status }}</td>
             <td class="imgIcon"><img src="assets/edit.svg" ng-click="openModal(task)"></td>
