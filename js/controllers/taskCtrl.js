@@ -90,8 +90,6 @@ angular.module('todoLista').controller('taskCtrl',  function($scope, $location, 
         let task = $scope.tasks.filter(elem => {
             return elem.id == taskId
         })[0]
-
-        console.log(task.status);
         
         task.status = task.status != "Done" ?  "Done" : "TODO"
 
